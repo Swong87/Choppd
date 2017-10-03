@@ -73,6 +73,9 @@ class Discover extends Component {
                   <strong>
                     {challenge.title}
                   </strong>
+                  <span className="delete-btn" onClick={() => this.deleteChallenge(challenge._id)}>
+                    ✗
+                  </span>
                 </li>
               ))}
             </ul>
