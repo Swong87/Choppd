@@ -65,7 +65,6 @@ class Discover extends Component {
           </form>
         </div>
         <div className="container">
-        {this.state.challenges.length ? (
           <ul>
             {this.state.challenges.map(challenge => (
               <li>
@@ -75,9 +74,6 @@ class Discover extends Component {
               </li>
             ))}
           </ul>
-          ) : (
-            <h3>No Results to Display</h3>
-          )}
         </div>
       </div>
     );
