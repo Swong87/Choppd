@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import API from "../utils/API";
-import ModalButton from "../components/ModalButton/ModalButton.js";
+import API from "../../utils/API";
+import ModalButton from "../../components/ModalButton/ModalButton.js";
 
 
 class Profile extends Component {
