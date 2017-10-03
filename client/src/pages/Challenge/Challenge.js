@@ -5,12 +5,18 @@ import API from "../../utils/API";
 class Challenge extends Component {
 
   state = {
+    challenge: {},
     recipes: [],
     title: ""
   };
 
   componentDidMount() {
-    this.loadRecipes();
+    API.getChallenge(this.props.match.params.id)
+      .then(
+        res => this.setState({ challenge: res.data })
+        // this.loadRecipes()
+      )
+    .catch(err => console.log(err));
   };
 
   loadRecipes = () => {
@@ -51,6 +57,11 @@ class Challenge extends Component {
     return (
       <div>
         <div className="container">
+          <div className="jumbotron">
+            <h1>
+              {this.state.challenge.title}
+            </h1>
+          </div>
           <form>
             <div className="form-group">
               <input  
