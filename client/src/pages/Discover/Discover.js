@@ -3,6 +3,11 @@ import API from "../../utils/API";
 
 
 class Discover extends Component {
+  // Make sure this.props.data is an array
+  propTypes: {
+    challenges: React.PropTypes.array.isRequired
+  };
+
   state = {
     challenges: [],
     title: ""
@@ -23,6 +28,7 @@ class Discover extends Component {
   };
 
   handleInputChange = event => {
+    console.log(this.state.challenges);
     const { name, value } = event.target;
     this.setState({
       [name]: value
@@ -46,8 +52,7 @@ class Discover extends Component {
         <div className="container">
           <form>
             <div className="form-group">
-              <input 
-                className="form-control" 
+              <input  
                 value={this.state.title}
                 onChange={this.handleInputChange}
                 name="title"
@@ -58,7 +63,8 @@ class Discover extends Component {
                 disabled={!(this.state.title)}
                 onClick={this.handleFormSubmit} 
                 style={{ float: "right" }} 
-                className="btn btn-success">
+                className="btn btn-success"
+              >
                 Submit Challenge
               </button>
             </div>
