@@ -69,7 +69,7 @@ class Discover extends Component {
           {this.state.challenges.length ? (
             <ul>
               {this.state.challenges.map(challenge => (
-                <li>
+                <li key={challenge._id}>
                   <strong>
                     {challenge.title}
                   </strong>
