@@ -2,30 +2,30 @@ import React, { Component } from "react";
 import API from "../../utils/API";
 
 
-class Discover extends Component {
+class Challenge extends Component {
 
   state = {
-    challenges: [],
+    recipes: [],
     title: ""
   };
 
   componentDidMount() {
-    this.loadChallenges();
+    this.loadRecipes();
   };
 
-  loadChallenges = () => {
-    API.getChallenges()
+  loadRecipes = () => {
+    API.getRecipes()
       .then(res =>
         this.setState({ 
-          challenges: res.data, 
+          recipes: res.data, 
           title: ""
         })
       ).catch(err => console.log(err));
   };
 
-  deleteChallenge = id => {
-    API.deleteChallenge(id)
-      .then(res => this.loadChallenges())
+  deleteRecipe = id => {
+    API.deleteRecipe(id)
+      .then(res => this.loadRecipes())
       .catch(err => console.log(err));
   };
 
@@ -39,10 +39,10 @@ class Discover extends Component {
   handleFormSubmit = event => {
     event.preventDefault();
     if (this.state.title) {
-      API.saveChallenge({
+      API.saveRecipe({
         title: this.state.title
       })
-        .then(res => this.loadChallenges())
+        .then(res => this.loadRecipes())
         .catch(err => console.log(err));
     }
   };
@@ -65,20 +65,20 @@ class Discover extends Component {
                 onClick={this.handleFormSubmit} 
                 className="btn btn-success"
               >
-                Submit Challenge
+                Submit Recipe
               </button>
             </div>
           </form>
         </div>
         <div className="container">
-          {this.state.challenges.length ? (
+          {this.state.recipes.length ? (
             <ul>
-              {this.state.challenges.map(challenge => (
-                <li key={challenge._id}>
+              {this.state.recipes.map(recipe => (
+                <li key={recipe._id}>
                   <strong>
-                    {challenge.title}
+                    {recipe.title}
                   </strong>
-                  <span className="btn" onClick={() => this.deleteChallenge(challenge._id)}>
+                  <span className="btn" onClick={() => this.deleteRecipe(recipe._id)}>
                     ✗
                   </span>
                 </li>
@@ -93,4 +93,4 @@ class Discover extends Component {
   }
 }
 
-export default Discover;
+export default Challenge;
