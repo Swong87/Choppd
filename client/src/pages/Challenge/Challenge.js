@@ -62,42 +62,7 @@ class Challenge extends Component {
               {this.state.challenge.title}
             </h1>
           </div>
-          <form>
-            <div className="form-group">
-              <input  
-                value={this.state.title}
-                onChange={this.handleInputChange}
-                name="title"
-                placeholder="Title (required)"
-              />
-            
-              <button 
-                disabled={!(this.state.title)}
-                onClick={this.handleFormSubmit} 
-                className="btn btn-success"
-              >
-                Submit Recipe
-              </button>
-            </div>
-          </form>
-        </div>
-        <div className="container">
-          {this.state.recipes.length ? (
-            <ul>
-              {this.state.recipes.map(recipe => (
-                <li key={recipe._id}>
-                  <strong>
-                    {recipe.title}
-                  </strong>
-                  <span className="btn" onClick={() => this.deleteRecipe(recipe._id)}>
-                    ✗
-                  </span>
-                </li>
-              ))}
-            </ul>
-          ) : (
-            <h3>No Results to Display</h3>
-          )}
+          
         </div>
       </div>
     );
