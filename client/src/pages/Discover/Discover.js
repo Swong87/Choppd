@@ -65,16 +65,16 @@ class Discover extends Component {
           </form>
         </div>
         <div className="container">
-        {this.state.challenges.length ? (
-          <ul>
-            {this.state.challenges.map(challenge => (
-              <li>
-                <strong>
-                  {challenge.title}
-                </strong>
-              </li>
-            ))}
-          </ul>
+          {this.state.challenges.length ? (
+            <ul>
+              {this.state.challenges.map(challenge => (
+                <li>
+                  <strong>
+                    {challenge.title}
+                  </strong>
+                </li>
+              ))}
+            </ul>
           ) : (
             <h3>No Results to Display</h3>
           )}
