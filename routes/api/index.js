@@ -5,7 +5,7 @@ const userRoutes = require("./users");
 
 // Book routes
 router.use("/recipes", recipeRoutes);
-router.use("/challenges", challengeRoutes);
+router.use("/discover", challengeRoutes);
 router.use("/users", userRoutes);
 
 module.exports = router;
