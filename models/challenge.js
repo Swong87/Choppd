@@ -8,8 +8,7 @@ const challengeSchema = new Schema({
   },
   image: String,
   user: { 
-  	type: String, 
-  	required: true 
+  	type: String
   },
   user_id: String,
   ingredients: Array,

@@ -8,8 +8,7 @@ const recipeSchema = new Schema({
   },
   image: String,
   user: { 
-  	type: String, 
-  	required: true 
+  	type: String 
   },
   _userId: {
   	type: Schema.Types.ObjectId,
