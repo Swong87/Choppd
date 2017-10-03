@@ -3,13 +3,9 @@ import API from "../../utils/API";
 
 
 class Discover extends Component {
-  // Make sure this.props.data is an array
-  propTypes: {
-    challenges: React.PropTypes.array.isRequired
-  };
 
   state = {
-    challenges: ["String"],
+    challenges: [],
     title: ""
   };
 
@@ -62,7 +58,6 @@ class Discover extends Component {
               <button 
                 disabled={!(this.state.title)}
                 onClick={this.handleFormSubmit} 
-                style={{ float: "right" }} 
                 className="btn btn-success"
               >
                 Submit Challenge

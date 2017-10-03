@@ -20,19 +20,19 @@ export default {
     return axios.post("/api/recipes", recipeData);
   },
   getChallenges: function() {
-    return axios.get("/api/challenges");
+    return axios.get("/api/discover");
   },
  
   getChallenge: function(id) {
-    return axios.get("/api/challenges/" + id);
+    return axios.get("/api/discover/" + id);
   },
 
   deleteChallenge: function(id) {
-    return axios.delete("/api/challenges/" + id);
+    return axios.delete("/api/discover/" + id);
   },
 
   saveChallenge: function(challengeData) {
-    return axios.post("/api/challenges", challengeData);
+    return axios.post("/api/discover", challengeData);
   },
   getUsers: function() {
     return axios.get("/api/users");
