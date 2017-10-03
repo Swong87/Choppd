@@ -23,6 +23,12 @@ class Discover extends Component {
       ).catch(err => console.log(err));
   };
 
+  deleteChallenge = id => {
+    API.deleteChallenge(id)
+      .then(res => this.loadChallenges())
+      .catch(err => console.log(err));
+  };
+
   handleInputChange = event => {
     console.log(this.state.challenges);
     const { name, value } = event.target;
