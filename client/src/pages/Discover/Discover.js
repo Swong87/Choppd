@@ -9,7 +9,7 @@ class Discover extends Component {
   };
 
   state = {
-    challenges: [],
+    challenges: ["String"],
     title: ""
   };
 
@@ -28,7 +28,7 @@ class Discover extends Component {
   };
 
   handleInputChange = event => {
-    console.log(this.state.challenges.data);
+    console.log(this.state.challenges);
     const { name, value } = event.target;
     this.setState({
       [name]: value
