@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
+import { Link } from "react-router-dom";
 
 
 class Discover extends Component {
@@ -75,9 +76,11 @@ class Discover extends Component {
             <ul>
               {this.state.challenges.map(challenge => (
                 <li key={challenge._id}>
-                  <strong>
-                    {challenge.title}
-                  </strong>
+                  <Link to={"/challenge/" + challenge._id}>
+                    <strong>
+                      {challenge.title}
+                    </strong>
+                  </Link>
                   <span className="btn" onClick={() => this.deleteChallenge(challenge._id)}>
                     ✗
                   </span>
