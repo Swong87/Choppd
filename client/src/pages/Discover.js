@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import API from "../utils/API";
-import { Link } from "react-router-dom";
 
 
 class Discover extends Component {
@@ -54,15 +53,9 @@ class Discover extends Component {
                 name="title"
                 placeholder="Title (required)"
               />
-              <input 
-                className="form-control" 
-                value={this.state.ingredients}
-                onChange={this.handleInputChange}
-                name="ingredients"
-                placeholder="Ingredients (required)"
-              />
+            
               <button 
-                disabled={!(this.state.ingredients && this.state.title)}
+                disabled={!(this.state.title)}
                 onClick={this.handleFormSubmit} 
                 style={{ float: "right" }} 
                 className="btn btn-success">
@@ -74,12 +67,10 @@ class Discover extends Component {
         <div className="container">
           <ul>
             {this.state.challenges.map(challenge => (
-              <li key={challenge._id}>
-                <Link to={"/challenges/" + challenge._id}>
-                  <strong>
-                    {challenge.title} by {challenge.ingredients}
-                  </strong>
-                </Link>
+              <li>
+                <strong>
+                  {challenge.title}
+                </strong>
               </li>
             ))}
           </ul>
