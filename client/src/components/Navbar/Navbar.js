@@ -30,7 +30,7 @@ const Navbar = props =>
             <Link to="/profile">Profile</Link>
           </li>
           <li>
-            <a href="/" onclick="signOut();">Sign out</a>
+            <a href="/" onclick="signOut">Sign out</a>
           </li>
         </ul>
       </div>
@@ -38,6 +38,7 @@ const Navbar = props =>
     <div className="text-center jumbotron">
       <h1>CHOPPD</h1>
     </div>
+    
   </div>;
 
 export default Navbar;
