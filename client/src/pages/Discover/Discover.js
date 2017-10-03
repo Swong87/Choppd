@@ -28,7 +28,7 @@ class Discover extends Component {
   };
 
   handleInputChange = event => {
-    console.log(this.state.challenges);
+    console.log(this.state.challenges.data);
     const { name, value } = event.target;
     this.setState({
       [name]: value
