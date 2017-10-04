@@ -17,8 +17,10 @@ export default {
   },
 
   saveRecipe: function(recipeData) {
+    axios.put("/api/discover/" + recipeData._challengeId, { $push: { "recipe": recipeData.title } });
     return axios.post("/api/recipes", recipeData);
   },
+
   getChallenges: function() {
     return axios.get("/api/discover");
   },

@@ -46,7 +46,8 @@ class Challenge extends Component {
     event.preventDefault();
     if (this.state.title) {
       API.saveRecipe({
-        title: this.state.title
+        title: this.state.title,
+        _challengeId: this.state.challenge._id
       })
         .then(res => this.loadRecipes())
         .catch(err => console.log(err));
@@ -82,9 +83,9 @@ class Challenge extends Component {
           </form>
         </div>
         <div className="container">
-          {this.state.recipes.length ? (
+          {this.state.challenge.recipe.length ? (
             <ul>
-              {this.state.recipes.map(recipe => (
+              {this.state.challenge.recipe.map(recipe => (
                 <li key={recipe._id}>
                   <strong>
                     {recipe.title}
