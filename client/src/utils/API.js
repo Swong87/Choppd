@@ -4,8 +4,8 @@ import axios from "axios";
 
 export default {
   
-  getRecipes: function() {
-    return axios.get("/api/recipes");
+  getRecipes: function(id) {
+    return axios.get("/api/recipes/" + id);
   },
  
   getRecipe: function(id) {
@@ -16,9 +16,8 @@ export default {
     return axios.delete("/api/recipes/" + id);
   },
 
-  saveRecipe: function(recipeData) {
-    axios.put("/api/discover/" + recipeData._challengeId, { $push: { "recipe": recipeData.title } });
-    return axios.post("/api/recipes", recipeData);
+  saveRecipe: function(recipeData, id) {
+    return axios.post("/api/recipes" + id, recipeData);
   },
 
   getChallenges: function() {
